@@ -1,0 +1,23 @@
+<h1>Edit Task</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name="title" value="{{task_obj.title}}">
+    <br>
+    <label for="description">Description</label>
+    <input type="text" name="description" value="{{task_obj.description}}">
+    <br>
+    <img src="{{task_obj.poster.url}}" alt="image" style="width: 100px;">
+    <label for="poster">Image</label>
+    <input type="file" name="poster" value="{{task_obj.poster}}">
+    <br>
+    <label for="status">Status</label>
+    <select name="status" id="dropdown">
+        <option value="{{task_obj.status}}">{{task_obj.status}}</option>
+        <option value="Pending">Pending</option>
+        <option value="In_Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+    </select>
+    <br>
+    <button type="submit">Edit</button>
+</form>

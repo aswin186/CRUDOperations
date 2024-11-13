@@ -1,0 +1,32 @@
+<h1>Your Tasks</h1>
+
+{% if tasks %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Poster</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        {% for task in tasks %}
+        <tbody>
+            <tr>
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.status}}</td>
+                <td>{{task.created_at}}</td>
+                <td><img src="{{task.poster.url}}" alt="null" style="width: 100px;"></td>
+                <td><a href="{% url 'edit' task.id %}">Edit</a></td>
+                <td><a href="{% url 'delete' task.id %}">Delete</a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% else %}
+    <h4>No tasks</h4>
+{% endif %}

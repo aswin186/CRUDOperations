@@ -1,0 +1,21 @@
+<h1>Add Tasks</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name="title">
+    <br>
+    <label for="description">Description</label>
+    <input type="text" name="description">
+    <br>
+    <label for="poster">Image</label>
+    <input type="file" name="poster">
+    <br>
+    <label for="status">Status</label>
+    <select name="status" id="dropdown">
+        <option value="Pending">Pending</option>
+        <option value="In_Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+    </select>
+    <br>
+    <button type="submit">Create</button>
+</form>
