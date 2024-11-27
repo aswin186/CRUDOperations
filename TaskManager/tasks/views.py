@@ -5,6 +5,7 @@ def index_view(request):
     return render(request, 'index.html')
 
 def create_view(request):
+
     if request.method == 'POST':
         print(request.POST)
         title = request.POST.get('title')
@@ -42,6 +43,7 @@ def edit_view(request, task_id):
         task_obj.save()
         print("Edited")
         return redirect('list')
+        
     return render(request, 'edit.html', context)
 
 def delete_view(request, task_id):

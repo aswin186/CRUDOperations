@@ -1,0 +1,14 @@
+div {
+    margin-top: 10px;
+    width: 100px;
+    background-color: red;
+}
+
+div a {
+    color: rgb(246, 217, 217);
+    text-decoration: none;
+    margin-right: 50px;
+    font-size: xx-large;
+    font-family:  Tahoma;
+    transition: 0.5s ease-in-out;
+}
